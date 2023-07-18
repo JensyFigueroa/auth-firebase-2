@@ -55,12 +55,15 @@ export const Login = () => {
                     <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password" placeholder="Your password" onChange={handleChange} required />
                 </div>
 
-                <div className="mb-4" style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-                   <span className="text-xs italic ">Don't have an account</span> <Link to='/register' className="text-blue-700 italic" >SignUp</Link>
+                <div className="mb-4" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span className="text-xs italic ">Don't have an account</span> <Link to='/register' className="text-blue-700 italic" >SignUp</Link>
                 </div>
 
                 <div className="flex flex-col">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-sm py-2 px-4 mb-4 rounded focus:outline-none focus:shadow-outline" type="submit">SignIn</button>
+                    <div className="flex items-center justify-between" >
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-sm py-2 px-4 mb-4 rounded focus:outline-none focus:shadow-outline" type="submit">Sign In</button>
+                        <Link className="inline-block align-baseline font-bold text-sm text-blue-500" to={'/recoverpass'}>Forgot your password?</Link>
+                    </div>
                     <button className="bg-gray-400 hover:bg-gray-700 text-white font-bold text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={handleSubmitWithGoogle}>Sign with Google</button>
                 </div>
             </form>

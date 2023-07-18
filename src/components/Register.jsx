@@ -48,7 +48,7 @@ export const Register = () => {
                 </div>
 
                 <div className="mb-4" style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-                   <span className="text-xs italic ">I already have an account</span> <Link to='/login' className="text-blue-700 italic" >SignIn</Link>
+                   <span className="text-xs italic ">I already have an account</span> <Link to='/login' className="text-blue-700 italic" >Sign Up</Link>
                 </div>
 
                 <button  className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">SignUp</button>

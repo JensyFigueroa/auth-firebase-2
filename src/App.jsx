@@ -5,6 +5,7 @@ import { Login } from './components/Login'
 import { Register } from './components/Register'
 import { AuthProvider } from './context/authContext'
 import { ProtectRoute } from './components/ProtectRoute'
+import { RecoverPassword } from './components/RecoverPassword'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<ProtectRoute><Home /></ProtectRoute>} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/recoverpass' element={<RecoverPassword />} />
         </Routes>
       </AuthProvider>
     </div>
