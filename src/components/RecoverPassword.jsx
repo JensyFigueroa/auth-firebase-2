@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Alert } from "./Alert"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "../context/authContext"
 
 export const RecoverPassword = () => {
     const [user, setUser] = useState({
@@ -10,14 +11,27 @@ export const RecoverPassword = () => {
     const [errors, setErrors] = useState()
     const navigate = useNavigate()
 
+    const { resetPass } = useAuth()
+
     const handleChange = (e) => {
         const { name, value } = e.target
         setUser({ ...user, [name]: value })
     }
 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-        navigate('/')
+        try {
+            await resetPass(user.email)
+            setErrors('We sent an email a link to reset your password')
+            setTimeout(()=>{
+                navigate('/')
+            },3000)
+            
+        } catch (error) {
+            setErrors(error.message)
+        }
     }
 
   return (
